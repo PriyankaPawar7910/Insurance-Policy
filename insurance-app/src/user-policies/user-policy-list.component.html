@@ -1,0 +1,64 @@
+<div class="policy">
+    <br><br><br>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"><br><br>
+                <button [routerLink]="['/adminpolicylist']" type="button" class="btn btn-link">Go Back</button>
+            </div>
+            <div class="col-sm"><br><br>
+                <h2 class="policy-name">Protecting Your Savings</h2>
+            </div>
+            <div class="col-sm">
+                <div class="row justify-content-around">
+
+                    <div class="row align-items-right">
+                        <img src="assets/images/home3.jpg" class="details" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr />
+
+
+    <div class="row">
+        <div *ngFor="let claimpolicy of policies" class="col-md-4">
+            <div class="well hoverwell thumbnail">
+                <br />
+                <div class="jumbotron card card-image"
+                    style="background-image: url(https://wallpapercave.com/wp/wp2723829.jpg);">
+                    <div class=" py-6 px-12">
+                        <div>
+                            <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                                <strong class="text-white">{{claimpolicy?.policy?.policyName}}</strong>
+                            </h2>
+                            <p class="mx-3 mb-5">
+                                <b>Description :</b> {{claimpolicy?.policy?.policyDescription}}<br>
+                                <b>Policy Type :</b> {{claimpolicy?.policy?.policyType}}<br>
+                                <b>Premium Amount :</b> INR.{{claimpolicy?.policy?.premiumAmount}}<br>
+                                <b>Duration(year) :</b> {{claimpolicy?.policy?.duration}}<br>
+                                <b>Name :</b>
+                                {{claimpolicy?.user?.firstName}}&nbsp;{{claimpolicy?.user?.lastName}}<br>
+                                <b>Phone number :</b> {{claimpolicy?.user?.phone}}<br>
+                                <b>City :</b> {{claimpolicy?.user?.city}}<br>
+
+
+                            </p>
+                            &nbsp;&nbsp;<button type="button" (click)="verifyBtn()" [disabled]="click"
+                                class="btn btn-warning">Verify</button>&nbsp;
+                            <button type="button" (click)="removeBtn(claimpolicy.claimedPolicy.planId)"
+                                [disabled]="click" class="btn btn-danger">Remove</button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

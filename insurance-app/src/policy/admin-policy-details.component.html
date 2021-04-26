@@ -1,0 +1,157 @@
+<div class="policy-detail">
+    <br><br><br>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"><br>
+                <button [routerLink]="['/adminpolicylist']" type="button" class="btn btn-link">Go Back</button>
+            </div>
+            <div class="col-sm"><br>
+                <div class="row">
+                    <div class="row justify-content-around">
+                        <h2 class="policy-name">{{policy?.policyName}} </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <br>
+
+            <div class="row justify-content-center">
+
+                <div class="row align-items-center">
+                    <table class="table table-striped">
+
+                        <tr>
+                            <td>
+                                <div class="col-6">
+                                    <strong>Details:</strong>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-6">
+                                    {{policy?.policyDescription}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-6">
+                                    <strong>Type:</strong>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-6">
+                                    {{policy?.policyType}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-6">
+                                    <strong>Premium Amount:</strong>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-6">
+                                    INR.{{policy?.premiumAmount}}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-6">
+                                    <strong>Duration(years):</strong>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-6">
+                                    {{policy?.duration}}
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+            <hr />
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <button type="button" (click)="editBtn(policy?.policyId)" class="btn btn-warning">Edit
+                        Policy</button>&nbsp;
+                    <button type="button" (click)="removeBtn(policy?.policyId)" [disabled]="click"
+                        class="btn btn-danger">Remove</button>
+
+                    <br><br><br>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Want to know more?</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Health Insurance</h6>
+                            <a href="/portfolio" class="card-link">Go to Portfolio-></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+
+                    <h3 class="benefit">Benefits of Health Insurance:</h3>
+                    <ul>
+                        <li>
+                            <h6>Cashless Treatment:</h6>
+                            <h6>You can avail the benefit of cashless treatment,
+                                if you visit a network hospital for treatment.
+                                This means that you don’t have to arrange for funds from your pocket while getting
+                                quality
+                                health care.
+                                All you need to do it inform the insurance desk in the network hospital about your
+                                policy
+                                number.
+                                They will arrange for the pre-authorization letter from your insurance company,
+                                and the hospital bill settlement will be taken care of smoothly by the hospital and
+                                your
+                                health insurance company.
+                            </h6>
+                        </li>
+                        <li>
+                            <h6>Tax Benefits:</h6>
+                            <h6>
+                                You can get a tax benefit by paying premium towards your health insurance plans in
+                                India.
+                                Whether you buy a health insurance for yourself or your family, you can get tax
+                                exemption as
+                                per section 80D of the Income Tax Act.
+                                You can claim tax deduction up to INR 25,000 per year for the health insurance
+                                premium
+                                paid
+                                for yourself,
+                                if your age is less than 60 years and up to INR 50,000 if you are a senior citizen.
+                            </h6>
+                        </li>
+                        <li>
+                            <h6>Free Health Check-Ups:</h6>
+                            <h6>
+                                It is said that prevention is better than cure. And, with your health insurance
+                                policy,
+                                you can avail the benefit of preventive care.
+                                You can regularly undertake heath check-ups without having to worry about paying
+                                medical
+                                bills.
+
+
+                            </h6>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

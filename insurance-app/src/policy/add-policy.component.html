@@ -1,0 +1,105 @@
+<div class="register">
+    <div class="container">
+        <br><br>
+        <div class="row">
+            <div class="signupform card col-md-6 offset-md-3 offset-md-3">
+                <form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+
+                    <h3 class="text-center">
+                        <span class="badge badge-dark">New Policy</span>
+                    </h3>
+                    <div class="form-group">
+                        <label>Policy Name</label>
+                        <input type="text" [class.is-invalid]="policyName.invalid && policyName.touched"
+                            class="form-control" formControlName="policyName" id="policyName"
+                            placeholder="Enter Policy Name" required />
+                        <div *ngIf="policyName.invalid && policyName.touched">
+                            <small class="text-danger" *ngIf="policyName.errors?.required">Policy Name is
+                                required</small>
+                            <small class="text-danger" *ngIf="policyName.errors?.minlength">Policy Name must be at least
+                                3
+                                characters</small>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea [class.is-invalid]="policyDescription.invalid && policyDescription.touched"
+                            class="form-control" formControlName="policyDescription" id="policyDescription"
+                            placeholder="Enter Policy Description" required>
+                        </textarea>
+                        <div *ngIf="policyDescription.invalid && policyDescription.touched">
+                            <small class="text-danger" *ngIf="policyDescription.errors?.required">Description is
+                                required</small>
+                            <small class="text-danger" *ngIf="policyDescription.errors?.minlength">Description must be
+                                at least 5-10
+                                characters</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="policyType">Policy Type</label>
+                        <select formControlName="policyType" class="form-control">
+                            <option disabled>Select type</option>
+                            <option>Choose Policy Type</option>
+                            <option *ngFor="let type of policyList">{{type}}</option>
+                        </select>
+                        <div *ngIf="policyType.touched && policyType.invalid" class="alert alert-danger">
+                            <div *ngIf="policyType.errors.required">Policy Type is required.</div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Premium Amount(INR)</label>
+                        <input type="number" [class.is-invalid]="premiumAmount.invalid && premiumAmount.touched"
+                            class="form-control" formControlName="premiumAmount" id="premiumAmount"
+                            placeholder="Enter Amount" required />
+                        <div *ngIf="premiumAmount.invalid && premiumAmount.touched">
+                            <small class="text-danger" *ngIf="premiumAmount.errors?.required">Premium Amount is
+                                required</small>
+                            <small class="text-danger" *ngIf="premiumAmount.errors?.pattern">Premium Amount should be in
+                                valid format</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Duration(year)</label>
+                        <input type="number" class="form-control"
+                            [class.is-invalid]="duration.invalid && duration.touched" class="form-control"
+                            formControlName="duration" id="duration" placeholder="Enter Duration" required />
+                        <div *ngIf="duration.invalid && duration.touched">
+                            <small class="text-danger" *ngIf="duration.errors?.required">Duration is required</small>
+                            <small class="text-danger" *ngIf="duration.errors?.pattern">Duration must be in valid
+                                format</small>
+                         </div>
+
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+
+                        <button type="submit" class="btn btn-success">
+                            Save
+                        </button>&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-danger" (click)="cancelBtn()">
+                            Cancel
+                        </button>
+
+
+
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
