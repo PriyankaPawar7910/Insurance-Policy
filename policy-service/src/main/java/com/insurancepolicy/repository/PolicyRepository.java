@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.insurancepolicy.model.Policy;
 @Repository
 public interface PolicyRepository extends JpaRepository<Policy, Integer>{
-
+	public Policy findByPolicyName(String policyName);
+	
 }

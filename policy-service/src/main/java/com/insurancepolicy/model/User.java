@@ -20,7 +20,7 @@ public class User {
 	@Column(name = "email_address")
 	private String email;
 	@Column(name = "phone_no")
-	private String phoneNo;
+	private String phone;
 	@Column
 	private String city;
 	@Column
@@ -30,14 +30,14 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int userId, String firstName, String lastName, String email, String phoneNo, String city,
+	public User(int userId, String firstName, String lastName, String email, String phone, String city,
 			String password) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.phoneNo = phoneNo;
+		this.phone = phone;
 		this.city = city;
 		this.password = password;
 	}
@@ -74,12 +74,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getPhoneNo() {
-		return phoneNo;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setPhoneNo(String phone) {
+		this.phone = phone;
 	}
 
 	public String getCity() {
@@ -101,7 +101,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phoneNo=" + phoneNo + ", city=" + city + ", password=" + password + "]";
+				+ ", phone=" + phone + ", city=" + city + ", password=" + password + "]";
 	}
 	
 

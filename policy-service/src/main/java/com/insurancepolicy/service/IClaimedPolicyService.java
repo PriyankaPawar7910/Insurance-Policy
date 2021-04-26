@@ -7,7 +7,7 @@ import com.insurancepolicy.model.ResponseTemplate;
 
 public interface IClaimedPolicyService {
 
-	List<ClaimedPolicy> getAllClaimPolicies();
+	List<ResponseTemplate> getAllClaimPolicies();
 
 	ClaimedPolicy addClaimPolicy(ClaimedPolicy claimPolicy);
 

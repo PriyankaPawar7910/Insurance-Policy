@@ -10,4 +10,6 @@ import com.insurancepolicy.model.ClaimedPolicy;
 @Repository
 public interface ClaimedPolicyRepository extends JpaRepository<ClaimedPolicy, Integer>{
 	public List<ClaimedPolicy> findAllByUserId(int userId);
+	public ClaimedPolicy findByPolicyIdAndUserId(int policyId,int userId);
+	public List<ClaimedPolicy> findAllByPolicyId(int policyId);
 }

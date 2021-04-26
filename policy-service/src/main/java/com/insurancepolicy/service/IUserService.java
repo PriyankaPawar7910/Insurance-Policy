@@ -16,5 +16,9 @@ public interface IUserService {
 
 	List<User> deleteUser(int userId);
 
+	boolean loginUser(String email, String password);
+
+	User getUserByEmail(String email);
+
 
 }
