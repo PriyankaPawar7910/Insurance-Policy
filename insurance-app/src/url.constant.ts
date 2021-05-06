@@ -5,14 +5,15 @@ export const URL={
     removePolicyUrl :'http://localhost:8001/policy/delete',
     updatePolicyUrl :'http://localhost:8001/policy/update',
 
-    userLoginUrl : 'http://localhost:8001/user/login',
-    userRegUrl:'http://localhost:8001/user/add',
-    getuserIdUrl : 'http://localhost:8001/user/getUserByEmail',
+    userLoginUrl : 'http://localhost:8002/user/login',
+    userRegUrl:'http://localhost:8002/user/add',
+    getuserIdUrl : 'http://localhost:8002/user/getUserByEmail',
+    getuserUrl :  'http://localhost:8002/user/getUser',
 
-    getUserPolicy:'http://localhost:8001/claimpolicy/getAll',
-    addClaimPolicyUrl:'http://localhost:8001/claimpolicy/add',
-    viewUserPolicyUrl :'http://localhost:8001/claimpolicy/getUserClaimPolicy',
-    removeUserPolicyUrl:'http://localhost:8001/claimpolicy/delete'
+    getUserPolicy:'http://localhost:8003/claimpolicy/getAll',
+    addClaimPolicyUrl:'http://localhost:8003/claimpolicy/add',
+    viewUserPolicyUrl :'http://localhost:8003/claimpolicy/getUserClaimPolicy',
+    removeUserPolicyUrl:'http://localhost:8003/claimpolicy/delete'
 
 
     

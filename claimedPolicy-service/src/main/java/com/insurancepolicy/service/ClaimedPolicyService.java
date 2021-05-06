@@ -40,7 +40,7 @@ public class ClaimedPolicyService implements IClaimedPolicyService {
 			claimPolicyDetails = policyList.get(i);
 			logger.info("CalimPolicy=" + claimPolicyDetails);
 			User user = restTemplate
-					.getForObject("http://localhost:8001/user/getUser/" + claimPolicyDetails.getUserId(), User.class);
+					.getForObject("http://localhost:8002/user/getUser/" + claimPolicyDetails.getUserId(), User.class);
 			logger.info("User=" + user);
 			logger.info("Policy Id=" + claimPolicyDetails.getPolicyId());
 			Policy policy = restTemplate.getForObject(
@@ -110,7 +110,7 @@ public class ClaimedPolicyService implements IClaimedPolicyService {
 		for (int i = 0; i < policyList.size(); i++) {
 			claimPolicyDetails = policyList.get(i);
 			logger.info("CalimPolicy=" + claimPolicyDetails);
-			User user = restTemplate.getForObject("http://localhost:8001/user/getUser/" + userId, User.class);
+			User user = restTemplate.getForObject("http://localhost:8002/user/getUser/" + userId, User.class);
 			logger.info("User=" + user);
 			logger.info("Policy Id=" + claimPolicyDetails.getPolicyId());
 			Policy policy = restTemplate.getForObject(

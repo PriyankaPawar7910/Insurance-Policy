@@ -1,0 +1,37 @@
+<div class="user-profile">
+    <br><br><br>
+    <hr />
+    <div class="form-signin card col-md-6 offset-md-3 offset-md-3" method="get">
+        <img src="assets/images/userlogo.jpg" class="profile">
+        <div>
+            <h3 class="display">Personal Information </h3>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <div><label>Name : </label> {{user.firstName}}&nbsp;{{user.lastName}}</div>
+                </li>
+                <li>
+                    <div><label>Email : </label> {{user.email}}</div>
+                </li>
+                <li>
+                    <div><label>Phone : </label> {{user.phone}}</div>
+                </li>
+            </ul>
+
+            <img src="assets/images/addresslogo.png" class="profile">
+            <div>
+                <h3 class="display">Address </h3>
+            </div>
+            <ul>
+                <li>
+                    <div><label>City : </label> {{user.city}}</div>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </div>
+
+</div>

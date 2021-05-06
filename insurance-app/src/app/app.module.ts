@@ -32,6 +32,7 @@ import { AboutPageComponent } from 'src/nav/about.component';
 import { ContactPageComponent } from 'src/nav/contact.component';
 import { FilterPipe } from 'src/services/pipe.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProfileComponent } from 'src/user/profile.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PortfolioComponent,
     AboutPageComponent,
     ContactPageComponent,
-    FilterPipe
+    FilterPipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

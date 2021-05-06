@@ -16,10 +16,6 @@ public class PolicyServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PolicyServiceApplication.class, args);
 	}
-	@Bean
-	@LoadBalanced
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+
 
 }

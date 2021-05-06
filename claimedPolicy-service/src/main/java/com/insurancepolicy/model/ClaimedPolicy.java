@@ -3,14 +3,17 @@ package com.insurancepolicy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "claimed_policies")
 public class ClaimedPolicy {
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="claimpol_seq",sequenceName="claimpol_seq",allocationSize = 1)       
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="claimpol_seq")
 	@Column(name = "plan_id")
 	private int planId;
 	@Column(name = "user_id")

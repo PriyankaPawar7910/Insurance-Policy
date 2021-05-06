@@ -133,3 +133,14 @@
     padding: 10px;
     cursor: pointer;
   }
+  .profile{
+    height: 100%;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .user-profile{
+    background-image: url('assets/images/bg2.jpg');
+    background-size: cover; 
+    height: 600px;
+  }

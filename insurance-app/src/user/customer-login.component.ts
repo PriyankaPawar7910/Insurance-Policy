@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { User } from "src/common/user";
 import { UserAuthenticateService } from "src/services/user-authenticate.service";
 import { UserService } from "src/services/user.service";
@@ -16,7 +16,8 @@ export class CustomerLoginComponent{
     userInfo : User;
     
     constructor(private route: Router, private formBuilder: FormBuilder,
-        private userService: UserService,private userAuthService:UserAuthenticateService) {
+        private userService: UserService,private userAuthService:UserAuthenticateService,
+        private router:ActivatedRoute) {
 
     }
     ngOnInit() {
@@ -25,6 +26,7 @@ export class CustomerLoginComponent{
             password: ['', [Validators.required, Validators.minLength(8),
                 Validators.pattern('(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{8,}')]]
         })
+    
     }
     get email() {
         return this.userForm.get('email')
@@ -47,10 +49,14 @@ export class CustomerLoginComponent{
                             console.log(this.userInfo);
                             this.userAuthService.removeUserId();
                             this.userAuthService.setUserId(this.userInfo.userId);
+                            this.userAuthService.removeUserName();
+                            this.userAuthService.setUserName(this.userInfo.firstName);
 
                         })
+                      
                         alert("Login Successful!")
                         this.route.navigateByUrl('/customerplan')
+                       
                       }
                     else {
                         alert("Invalid username or password!")

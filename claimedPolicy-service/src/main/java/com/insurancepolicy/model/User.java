@@ -1,29 +1,14 @@
 package com.insurancepolicy.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "users")
 public class User {
-	@Id
-	@GeneratedValue
-	@Column(name = "user_id")
+
 	private int userId;
-	@Column(name = "first_name")
 	private String firstName;
-	@Column(name = "last_name")
 	private String lastName;
-	@Column(name = "email_address")
 	private String email;
-	@Column(name = "phone_no")
 	private String phone;
-	@Column
 	private String city;
-	@Column
 	private String password;
 	
 	public User() {

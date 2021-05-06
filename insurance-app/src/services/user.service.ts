@@ -19,6 +19,9 @@ export class UserService {
     getUserId(email){
         return this.httpClient.get<User>(`${URL.getuserIdUrl}/${email}`);
     }
+    getUser(userId){
+        return this.httpClient.get<User>(`${URL.getuserUrl}/${userId}`)
+    }
 
 
 }

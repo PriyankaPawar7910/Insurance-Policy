@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { User } from "src/common/user";
 import { AuthenticationService } from "src/services/authenticate.service";
+import { UserAuthenticateService } from "src/services/user-authenticate.service";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AdminLoginComponent {
 
 
     constructor(private route: Router, private formBuilder: FormBuilder,
-        private loginService: AuthenticationService) {
+        private loginService: AuthenticationService,private userAuthService:UserAuthenticateService ) {
 
     }
     ngOnInit() {
@@ -39,8 +40,13 @@ export class AdminLoginComponent {
             this.user = this.userForm.value;
             if (this.loginService.authenticate(this.user.email, this.user.password)
             ) {
+                this.userAuthService.removeUserName();
+                this.userAuthService.setUserName('John');
+                this.userAuthService.removeUserId();
+                this.userAuthService.setUserId(2);
                 this.route.navigate(['/adminplan'])
                 this.invalidLogin = false
+
             } else{
                 alert('Invalid details or you are not authorized!')
                 this.invalidLogin = true

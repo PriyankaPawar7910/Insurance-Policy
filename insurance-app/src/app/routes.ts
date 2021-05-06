@@ -16,6 +16,7 @@ import { UserPolicyListComponent } from "src/user-policies/user-policy-list.comp
 import { ViewUserPolicyComponent } from "src/user-policies/view-user-policy.component";
 import { AdminLoginComponent } from "src/user/admin-login.component";
 import { CustomerLoginComponent } from "src/user/customer-login.component";
+import { ProfileComponent } from "src/user/profile.component";
 import { UserRegistrationComponent } from "src/user/registration.component";
 
 export const appRoutes: Routes = [
@@ -38,6 +39,7 @@ export const appRoutes: Routes = [
     {path:'portfolio',component:PortfolioComponent},
     {path:'about',component:AboutPageComponent},
     {path:'contact',component:ContactPageComponent},
+    {path:'profile',component:ProfileComponent},
     {path:'**',component:Error404Component}
 
 
